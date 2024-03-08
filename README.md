@@ -96,26 +96,21 @@
 - 그룹 삭제 및 사이트 추가
 
 ## 💻화면
-- 그룹개설<br>
+- 회원가입<br>
 
-![20240303_162936](https://github.com/alsrl2275/alsrl2275/assets/142866976/99e24c14-6bb8-4b94-829a-a8abccaf8132)
-![20240303_163722](https://github.com/alsrl2275/alsrl2275/assets/142866976/4ddc9d7e-788f-4d1c-aaef-9ef768167182)<br>
+<img width="1280" alt="create" src="https://github.com/zkflsk/2_Project/assets/151593682/f4809f88-bcab-4ba2-915b-1ba568c4afe3"><br>
 
-- 일정관리<br>
+- 회원정보<br>
 
-![20240303_163409](https://github.com/alsrl2275/alsrl2275/assets/142866976/3552dc58-c310-4959-9937-92a034f19d68)<br>
+<img width="1280" alt="userdata" src="https://github.com/zkflsk/2_Project/assets/151593682/7476f267-d313-4dca-a1ab-f6f4cf5b6f8b"><br>
 
-![20240303_163427](https://github.com/alsrl2275/alsrl2275/assets/142866976/3927c3cf-e75c-4322-8f27-7664654331ae)<br>
+- 회원수정 <br>
 
-![20240303_164230](https://github.com/alsrl2275/alsrl2275/assets/142866976/26110683-011d-4f18-9b65-aba945376ca5)<br>
+<img width="1280" alt="update" src="https://github.com/zkflsk/2_Project/assets/151593682/c0afeeec-a4ac-4398-9d3a-bd4bf570df1b">
 
-![20240303_164307](https://github.com/alsrl2275/alsrl2275/assets/142866976/7994dd10-e34d-4aed-becc-74d942f1dff4)<br>
+- 채팅방 <br>
 
-![20240303_164324](https://github.com/alsrl2275/alsrl2275/assets/142866976/2740c261-7839-4b78-913e-f99bfb7fc6f1)
-
-- 유로모임 신청 시 결제화면 <br>
-
-![20240303_164619](https://github.com/alsrl2275/alsrl2275/assets/142866976/ea011d62-484b-4d91-a35a-628eed49ef8e)
+<img width="1280" alt="chat" src="https://github.com/zkflsk/2_Project/assets/151593682/3899ed59-5f33-4576-9eae-dbad03728966">
 
 
 ## 느낀점
