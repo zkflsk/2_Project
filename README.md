@@ -17,6 +17,10 @@
 - Apache Tomcat
 - WebSocket
 
+## 💻 Git stats
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=zkflsk&show_icons=true&theme=cobalt)
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pangyosim&exclude_repo=songyouyoung.github.io&layout=compact&theme=tokyonight" height = "195px"/>
+
 ### Skills
 - CRUD (C, U)담당
 - webSocket 활용(채팅방)
