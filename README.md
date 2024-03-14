@@ -45,16 +45,18 @@
   webSocket을 활용하여 실시간으로 채팅을 할 수 있게 구현
   채팅방 형태는 카카오톡을 참고하여 css
 
+### WebSocet 코드
+
 - WebSocketCongiuration.java
 
-package com.web.config;
+  package com.web.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-import org.springframework.web.socket.server.standard.ServerEndpointExporter;
+  import org.springframework.context.annotation.Bean;
+  import org.springframework.stereotype.Component;
+  import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
-@Component
-public class WebSocketConfiguration {
+  @Component
+  public class WebSocketConfiguration {
 
 
 	@Bean
@@ -62,27 +64,26 @@ public class WebSocketConfiguration {
 			return new ServerEndpointExporter();
 	}
 
-}
+  }
 
 - ChatService.java
+  package com.web.service;
 
-package com.web.service;
+  import org.slf4j.Logger;
+  import org.slf4j.LoggerFactory;
+  import org.springframework.stereotype.Service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+  import javax.websocket.OnClose;
+  import javax.websocket.OnMessage;
+  import javax.websocket.OnOpen;
+  import javax.websocket.Session;
+  import javax.websocket.server.ServerEndpoint;
+  import java.io.IOException;
+  import java.util.*;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
-import java.util.*;
-
-@Service
-@ServerEndpoint("/chatt")
-public class ChatService {
+  @Service
+  @ServerEndpoint("/chatt")
+  public class ChatService {
 	
 	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
 	private static Logger logger = LoggerFactory.getLogger(ChatService.class);
@@ -120,7 +121,7 @@ public class ChatService {
 		clients.remove(session);
 	}
 	
-}
+  }
 
 
 ## :speaker: 프로젝트 주요 기능 
