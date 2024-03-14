@@ -37,14 +37,91 @@
   로그인 되어있는 정보를 LoginContext를 활용하여 아이디의 정보들을 불러와서 정보를 확인할 수 있게 구현
 
 - 회원 수정
-  로그인 되어있는 정보를 LoginContext를 활용하여 불러온 후 수정 가능한 것들을 수정해서 업데이트 된 정보를 오라클 DB서버에 저장\
+  로그인 되어있는 정보를 LoginContext를 활용하여 불러온 후 수정 가능한 것들을 수정해서 업데이트 된 정보를 오라클 DB서버에 저장
 
 ### 채팅방 (webSocket 활용)
 
 - 채팅방
   webSocket을 활용하여 실시간으로 채팅을 할 수 있게 구현
   채팅방 형태는 카카오톡을 참고하여 css
-  
+
+- WebSocketCongiuration.java
+
+package com.web.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import org.springframework.web.socket.server.standard.ServerEndpointExporter;
+
+@Component
+public class WebSocketConfiguration {
+
+
+	@Bean
+	public ServerEndpointExporter serverEndpointExporter() {
+			return new ServerEndpointExporter();
+	}
+
+}
+
+- ChatService.java
+
+package com.web.service;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import javax.websocket.OnClose;
+import javax.websocket.OnMessage;
+import javax.websocket.OnOpen;
+import javax.websocket.Session;
+import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
+import java.util.*;
+
+@Service
+@ServerEndpoint("/chatt")
+public class ChatService {
+	
+	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
+	private static Logger logger = LoggerFactory.getLogger(ChatService.class);
+	
+	@OnOpen
+	public void onOpen(Session session) {
+		
+		logger.info("open session : {}, clients={}", session.toString(), clients);
+		Map<String, List<String>> res = session.getRequestParameterMap();
+		logger.info("res={}", res);
+		
+		if(!clients.contains(session)) {
+			clients.add(session);
+			logger.info("session open : {}", session);
+		}else {
+			logger.info("이미 연결된 session");
+		}
+	}
+	
+	@OnMessage
+	public void onMessage(String message, Session session) throws IOException{
+		System.out.println(message);
+		
+		logger.info("receive message : {}", message);
+		
+		for(Session s : clients) {
+			logger.info("send data : {}", message);
+			s.getBasicRemote().sendText(message);
+		}
+	}
+	
+	@OnClose
+	public void onClose(Session session) {
+		logger.info("session close : {}", session);
+		clients.remove(session);
+	}
+	
+}
+
 
 ## :speaker: 프로젝트 주요 기능 
 
